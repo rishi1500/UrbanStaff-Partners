@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UrbanStaff Partners — Recruitment & Staffing Solutions Across India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0f1117;
+    --ink-mid: #2d3142;
+    --ink-light: #5a5f73;
+    --ink-faint: #9398ad;
+    --accent: #1d4ed8;
+    --accent-dark: #1239a8;
+    --accent-soft: #eff4ff;
+    --border: #e4e7f0;
+    --surface: #f8f9fc;
+    --white: #ffffff;
+    --charcoal: #1c2030;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    background: var(--accent);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-mark svg { width: 18px; height: 18px; }
+
+  .logo-text {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .logo-text span {
+    color: var(--accent);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--ink-mid);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 20px;
+    border-radius: 7px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink-mid);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { background: var(--surface); border-color: #c8cdd8; }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(29,78,216,0.28); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+  }
+  .btn-outline:hover { background: var(--accent-soft); }
+
+  /* ─── HERO ─── */
+  #hero {
+    padding: 140px 5% 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-soft);
+    border: 1px solid #c7d9ff;
+    border-radius: 100px;
+    padding: 5px 14px 5px 5px;
+    margin-bottom: 24px;
+  }
+
+  .hero-badge .dot {
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  .hero-badge span {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--accent);
+    font-family: 'Sora', sans-serif;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-title {
+    font-size: clamp(30px, 3.8vw, 50px);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    margin-bottom: 20px;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--ink-light);
+    line-height: 1.7;
+    max-width: 460px;
+    margin-bottom: 36px;
+    font-weight: 400;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+
+  .hero-actions .btn { font-size: 14.5px; padding: 12px 26px; }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .meta-label {
+    font-size: 12px;
+    color: var(--ink-faint);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .meta-value {
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-mid);
+  }
+
+  /* Hero Visual */
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    padding: 10px;
+  }
+
+  .role-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 2px 12px rgba(15,17,23,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: floatIn 0.6s ease both;
+  }
+
+  .role-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15,17,23,0.10); }
+
+  @keyframes floatIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .role-card:nth-child(1) { animation-delay: 0.1s; }
+  .role-card:nth-child(2) { animation-delay: 0.2s; }
+  .role-card:nth-child(3) { animation-delay: 0.3s; }
+  .role-card:nth-child(4) { animation-delay: 0.4s; }
+
+  .role-icon {
+    width: 36px; height: 36px;
+    background: var(--accent-soft);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .role-icon svg { width: 18px; height: 18px; color: var(--accent); }
+
+  .role-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .role-desc {
+    font-size: 12px;
+    color: var(--ink-faint);
+    line-height: 1.5;
+  }
+
+  .role-tag {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 3px 9px;
+    background: #f0f4ff;
+    border-radius: 20px;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* ─── DIVIDER ─── */
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  /* ─── ABOUT ─── */
+  #about {
+    padding: 90px 5%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section-heading {
+    font-size: clamp(24px, 2.6vw, 36px);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .section-body {
+    font-size: 15.5px;
+    color: var(--ink-light);
+    line-height: 1.75;
+  }
+
+  .about-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .pill {
+    padding: 7px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-mid);
+  }
+
+  .about-highlight {
+    background: var(--charcoal);
+    border-radius: 16px;
+    padding: 36px;
+    color: var(--white);
+  }
+
+  .about-highlight h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .about-highlight p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .highlight-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .highlight-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .highlight-list li::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: #5b9bff;
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  /* ─── SERVICES ─── */
+  #services {
+    background: var(--surface);
+    padding: 90px 5%;
+  }
+
+  .services-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 52px;
+    max-width: 540px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover { box-shadow: 0 8px 28px rgba(15,17,23,0.08); transform: translateY(-2px); }
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-icon {
+    width: 44px; height: 44px;
+    background: var(--accent-soft);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  .service-icon svg { width: 22px; height: 22px; color: var(--accent); }
+
+  .service-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .service-desc {
+    font-size: 13.5px;
+    color: var(--ink-light);
+    line-height: 1.65;
+  }
+
+  /* ─── WHY CHOOSE ─── */
+  #why {
+    padding: 90px 5%;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: 52px;
+  }
+
+  .why-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .why-item {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .why-num {
+    width: 36px; height: 36px;
+    background: var(--accent-soft);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .why-content h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+
+  .why-content p {
+    font-size: 13.5px;
+    color: var(--ink-light);
+    line-height: 1.65;
+  }
+
+  .why-visual {
+    background: var(--charcoal);
+    border-radius: 16px;
+    padding: 36px;
+    color: white;
+    position: sticky;
+    top: 80px;
+  }
+
+  .why-visual h3 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .why-visual .sub {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 28px;
+  }
+
+  .sector-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sector-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .sector-name {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+
+  .sector-badge {
+    font-size: 11px;
+    color: #7eb3ff;
+    background: rgba(93,155,255,0.12);
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* ─── PROCESS ─── */
+  #process {
+    background: var(--surface);
+    padding: 90px 5%;
+  }
+
+  .process-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 52px;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: calc(12.5% + 16px);
+    right: calc(12.5% + 16px);
+    height: 1.5px;
+    background: var(--border);
+    z-index: 0;
+  }
+
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-circle {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .process-step:hover .step-circle {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .process-step:hover .step-circle svg { color: white; }
+
+  .step-circle svg { width: 24px; height: 24px; color: var(--accent); transition: color 0.3s; }
+
+  .step-num {
+    position: absolute;
+    top: -6px; right: -6px;
+    width: 20px; height: 20px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    font-family: 'Sora', sans-serif;
+  }
+
+  .step-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .step-desc {
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+
+  /* ─── CANDIDATES ─── */
+  #candidates {
+    padding: 90px 5%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .candidate-roles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .candidate-role {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+    transition: all 0.2s;
+  }
+
+  .candidate-role:hover { border-color: #b0c8ff; background: var(--accent-soft); }
+
+  .candidate-role-icon {
+    width: 34px; height: 34px;
+    background: var(--accent-soft);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .candidate-role-icon svg { width: 16px; height: 16px; color: var(--accent); }
+
+  .candidate-role-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-mid);
+  }
+
+  .candidate-visual {
+    background: var(--charcoal);
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    text-align: center;
+  }
+
+  .candidate-visual .big-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+  }
+
+  .candidate-visual .sub-text {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 32px;
+  }
+
+  .candidate-visual .cta-block {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: left;
+  }
+
+  .cta-block h4 {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .cta-block p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .cta-block .btn-white {
+    background: white;
+    color: var(--ink);
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 7px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .cta-block .btn-white:hover { background: #f0f4ff; transform: translateY(-1px); }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--surface);
+    padding: 90px 5%;
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contact-info h2 { margin-bottom: 16px; }
+  .contact-info p {
+    font-size: 15px;
+    color: var(--ink-light);
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 14px;
+    color: var(--ink-mid);
+  }
+
+  .contact-detail-icon {
+    width: 36px; height: 36px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-detail-icon svg { width: 16px; height: 16px; color: var(--accent); }
+
+  .contact-form {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    box-shadow: 0 4px 24px rgba(15,17,23,0.06);
+  }
+
+  .form-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--ink-mid);
+    letter-spacing: 0.02em;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(29,78,216,0.08);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-note {
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 8px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--charcoal);
+    padding: 56px 5% 32px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 44px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 28px;
+  }
+
+  .footer-brand .logo-text {
+    color: white;
+    font-size: 17px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .footer-brand p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    max-width: 300px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-contact {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-contact a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 13.5px;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-contact a:hover { color: #7eb3ff; }
+
+  .footer-col h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.5);
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .footer-bottom a { color: rgba(255,255,255,0.45); text-decoration: none; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    #hero, #about, #candidates, .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .why-grid { grid-template-columns: 1fr; }
+    .why-visual { position: static; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .process-steps::before { display: none; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .hero-card-grid { grid-template-columns: 1fr 1fr; }
+    nav .nav-links { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    #hero { padding: 100px 5% 60px; }
+    .hero-meta { flex-direction: column; gap: 16px; }
+    .process-steps { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .hero-card-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  }
+
+  /* ─── SUBTLE ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .fade-up-2 { animation: fadeUp 0.7s ease 0.15s both; }
+  .fade-up-3 { animation: fadeUp 0.7s ease 0.28s both; }
+  .fade-up-4 { animation: fadeUp 0.7s ease 0.42s both; }
+
+  /* Mobile menu */
+  .nav-mobile-btn {
+    display: none;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 7px 10px;
+    cursor: pointer;
+    color: var(--ink-mid);
+  }
+
+  @media (max-width: 900px) { .nav-mobile-btn { display: flex; align-items: center; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    </div>
+    <span class="logo-text">UrbanStaff <span>Partners</span></span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#candidates">For Candidates</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-cta">
+    <a href="#candidates" class="btn btn-ghost">Submit Resume</a>
+    <a href="#contact" class="btn btn-primary">Hire Talent</a>
+  </div>
+
+  <button class="nav-mobile-btn" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge fade-up">
+      <div class="dot"></div>
+      <span>Pan-India Staffing Partner</span>
+    </div>
+    <h1 class="hero-title fade-up-2">
+      Reliable Recruitment &amp; Staffing Solutions <em>Across India</em>
+    </h1>
+    <p class="hero-sub fade-up-3">
+      We help companies hire pre-screened talent across operations, customer support, sales, administration, startups, and bulk hiring roles — with a structured, efficient approach.
+    </p>
+    <div class="hero-actions fade-up-4">
+      <a href="#contact" class="btn btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        Hire Talent
+      </a>
+      <a href="#candidates" class="btn btn-outline">Submit Resume</a>
+    </div>
+    <div class="hero-meta fade-up-4">
+      <div class="meta-item">
+        <span class="meta-label">Sectors</span>
+        <span class="meta-value">BPO · Retail · Tech · Ops</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Coverage</span>
+        <span class="meta-value">Pan-India</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Hiring</span>
+        <span class="meta-value">Contract & Full-time</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card-grid">
+
+      <div class="role-card">
+        <div class="role-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        </div>
+        <div class="role-title">BPO & Support Hiring</div>
+        <div class="role-desc">Customer service, inbound/outbound, voice & non-voice roles</div>
+        <span class="role-tag">High Volume</span>
+      </div>
+
+      <div class="role-card">
+        <div class="role-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <div class="role-title">Startup Hiring</div>
+        <div class="role-desc">Lean team builds, cross-functional hires for early-stage companies</div>
+        <span class="role-tag">Flexible</span>
+      </div>
+
+      <div class="role-card">
+        <div class="role-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="role-title">Sales & Field Roles</div>
+        <div class="role-desc">Field executives, BD reps, account managers across cities</div>
+        <span class="role-tag">Pan-India</span>
+      </div>
+
+      <div class="role-card">
+        <div class="role-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div class="role-title">Operations & Admin</div>
+        <div class="role-desc">Back-office, data entry, coordination, and support staff</div>
+        <span class="role-tag">Immediate</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <div class="about-label">Who We Are</div>
+    <h2 class="section-heading">A Staffing Partner Built for Modern Businesses</h2>
+    <p class="section-body">
+      UrbanStaff Partners is a modern recruitment and staffing firm helping businesses across India streamline their hiring and workforce acquisition. We work with startups, growing companies, BPOs, retail businesses, and mid-sized organizations.
+    </p>
+    <p class="section-body" style="margin-top:14px;">
+      Our work is straightforward: understand what you need, find people who fit, coordinate effectively, and support you through to successful joining. No fluff, no delays.
+    </p>
+    <div class="about-pills">
+      <span class="pill">Startups</span>
+      <span class="pill">BPOs</span>
+      <span class="pill">Retail Chains</span>
+      <span class="pill">SMEs</span>
+      <span class="pill">E-commerce</span>
+      <span class="pill">Logistics</span>
+    </div>
+  </div>
+
+  <div class="about-highlight">
+    <h3>What Makes Our Approach Different</h3>
+    <p>We focus on structured hiring, not just resume forwarding. Every profile we share is evaluated against your specific requirement before it reaches your desk.</p>
+    <ul class="highlight-list">
+      <li>Pre-screened candidates matched to your job description</li>
+      <li>Dedicated point of contact for each requirement</li>
+      <li>Clear timelines and regular updates throughout the process</li>
+      <li>Support across contract, full-time, and bulk hiring models</li>
+      <li>Pan-India network across metros and Tier-2 cities</li>
+      <li>No hidden charges or misleading placement guarantees</li>
+    </ul>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-inner">
+    <div class="section-header">
+      <div class="about-label">What We Do</div>
+      <h2 class="section-heading">Staffing Solutions for Every Hiring Need</h2>
+      <p class="section-body">From single hires to large-scale recruitment drives, we adapt our approach to fit your organization's size and structure.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="service-name">Recruitment Services</div>
+        <div class="service-desc">End-to-end hiring support — from sourcing and screening to coordination and onboarding. Suitable for regular open positions across departments.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="service-name">Bulk Hiring</div>
+        <div class="service-desc">Structured large-scale recruitment drives for operations, retail expansion, onboarding batches, and project-based workforce requirements.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="service-name">Startup Hiring</div>
+        <div class="service-desc">Specialized support for early-stage and growing companies building their first teams across business development, operations, and support functions.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="service-name">Remote Hiring</div>
+        <div class="service-desc">Finding remote-ready talent for businesses operating distributed teams, including work-from-home roles in support, content, and coordination.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="service-name">Contract Staffing</div>
+        <div class="service-desc">Flexible staffing for seasonal demand, project timelines, or temporary workforce needs — with a structured handover process at every stage.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        </div>
+        <div class="service-name">BPO & Customer Support Hiring</div>
+        <div class="service-desc">Volume hiring for inbound/outbound support, voice and non-voice processes, chat support, and customer success roles across BPO companies.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="service-name">Sales & Operations Hiring</div>
+        <div class="service-desc">Targeted recruitment for field sales, business development, logistics operations, and warehouse management across India's major cities and Tier-2 markets.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section id="why">
+  <div class="about-label">Why UrbanStaff</div>
+  <h2 class="section-heading">Hiring that Works, Without the Guesswork</h2>
+  <p class="section-body" style="max-width:520px;">We've built our process around what companies actually need: faster turnaround, better-screened candidates, and reliable communication at every step.</p>
+
+  <div class="why-grid">
+    <div class="why-list">
+
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-content">
+          <h4>Faster Hiring Cycle</h4>
+          <p>We maintain an active talent pipeline across roles and cities, enabling us to present relevant profiles quickly without starting from scratch each time.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-content">
+          <h4>Pre-Screened Profiles Only</h4>
+          <p>Every candidate we share has been reviewed against your job description. We don't send bulk, unfiltered CVs — only relevant, evaluated profiles.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-content">
+          <h4>Pan-India Hiring Support</h4>
+          <p>We source candidates across metro cities, Tier-2 towns, and regional markets — giving you access to a wider, more diverse talent pool.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-content">
+          <h4>Dedicated Hiring Coordination</h4>
+          <p>Each requirement is assigned a dedicated coordinator who manages scheduling, follow-ups, and status updates so you don't have to chase information.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">05</div>
+        <div class="why-content">
+          <h4>Flexible Hiring Models</h4>
+          <p>Whether you need contract staff, full-time hires, or large-batch joining, we structure the engagement to fit how your business actually operates.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">06</div>
+        <div class="why-content">
+          <h4>Transparent Communication</h4>
+          <p>No vague timelines or unexplained delays. We communicate clearly through each stage and keep both sides informed and aligned.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="why-visual">
+      <h3>Industries We Hire For</h3>
+      <p class="sub">Active placement across sectors</p>
+      <div class="sector-list">
+        <div class="sector-item"><span class="sector-name">BPO / Call Centres</span><span class="sector-badge">High Volume</span></div>
+        <div class="sector-item"><span class="sector-name">E-commerce & Retail</span><span class="sector-badge">Ongoing</span></div>
+        <div class="sector-item"><span class="sector-name">Startups & New-age Firms</span><span class="sector-badge">Team Build</span></div>
+        <div class="sector-item"><span class="sector-name">Logistics & Warehousing</span><span class="sector-badge">Pan-India</span></div>
+        <div class="sector-item"><span class="sector-name">BFSI & Fintech</span><span class="sector-badge">Screened</span></div>
+        <div class="sector-item"><span class="sector-name">Healthcare Administration</span><span class="sector-badge">Verified</span></div>
+        <div class="sector-item"><span class="sector-name">EdTech & Online Ventures</span><span class="sector-badge">Remote</span></div>
+        <div class="sector-item"><span class="sector-name">Manufacturing & Operations</span><span class="sector-badge">Bulk</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- HOW IT WORKS -->
+<section id="process">
+  <div class="process-inner">
+    <div class="section-header" style="max-width:100%; text-align:center; margin-left:auto; margin-right:auto;">
+      <div class="about-label" style="text-align:center;">Our Process</div>
+      <h2 class="section-heading" style="text-align:center;">How We Fill Your Requirement</h2>
+      <p class="section-body" style="text-align:center; max-width:480px; margin: 0 auto;">A clear, structured process designed to reduce hiring time and improve candidate quality at every stage.</p>
+    </div>
+
+    <div class="process-steps">
+
+      <div class="process-step">
+        <div class="step-circle">
+          <div class="step-num">1</div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="step-title">Share Requirement</div>
+        <div class="step-desc">You tell us the role, team size, location, and any specific criteria. We ask the right questions upfront.</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">
+          <div class="step-num">2</div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="step-title">Candidate Screening</div>
+        <div class="step-desc">We source, evaluate, and shortlist candidates against your JD before sending any profiles to your team.</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">
+          <div class="step-num">3</div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="23 11 17 11"/><line x1="20" y1="8" x2="20" y2="14"/></svg>
+        </div>
+        <div class="step-title">Interview Rounds</div>
+        <div class="step-desc">We coordinate scheduling, manage availability, and follow up with candidates through each interview stage.</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">
+          <div class="step-num">4</div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="step-title">Successful Joining</div>
+        <div class="step-desc">We support the offer and onboarding stage to ensure candidates show up and join without last-minute drop-offs.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOR CANDIDATES -->
+<section id="candidates">
+  <div>
+    <div class="about-label">For Job Seekers</div>
+    <h2 class="section-heading">Looking for Your Next Opportunity?</h2>
+    <p class="section-body" style="margin-bottom:8px;">
+      We work with companies that are actively hiring — not collecting resumes. If you're open to new opportunities in operations, customer support, sales, administration, or related roles, submit your profile and we'll reach out when something matches.
+    </p>
+    <p class="section-body">
+      No registration fees. No misleading promises. Just a straightforward process to help you connect with hiring companies.
+    </p>
+
+    <div class="candidate-roles">
+      <div class="candidate-role">
+        <div class="candidate-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg></div>
+        <span class="candidate-role-text">Customer Support & BPO</span>
+      </div>
+      <div class="candidate-role">
+        <div class="candidate-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <span class="candidate-role-text">Sales & Business Development</span>
+      </div>
+      <div class="candidate-role">
+        <div class="candidate-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <span class="candidate-role-text">Administration & Back-Office</span>
+      </div>
+      <div class="candidate-role">
+        <div class="candidate-role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <span class="candidate-role-text">Operations & Logistics</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="candidate-visual">
+    <div class="big-text">Submit Your<br/>Profile Today</div>
+    <div class="sub-text">Let the right opportunity find you</div>
+
+    <div class="cta-block">
+      <h4>How It Works for Candidates</h4>
+      <p>Send us your updated resume and preferred role type. We review profiles as requirements come in from companies we work with. If there's a match, we'll contact you directly — no generic job boards, no spam.</p>
+      <a href="mailto:careers@urbanstaffpartners.in" class="btn-white">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Submit Your Resume
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="about-label">Get in Touch</div>
+      <h2 class="section-heading">Share Your Hiring Requirement</h2>
+      <p>Tell us what you're looking for and we'll get back to you within one business day. No commitment required for the first conversation.</p>
+
+      <div class="contact-details">
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <span>hire@urbanstaffpartners.in</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+          </div>
+          <span>+91 98XXX XXXXX</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2H3v16h5l3 3 3-3h7V2z"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="12" y2="12"/></svg>
+          </div>
+          <span>LinkedIn — UrbanStaff Partners</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span>Pan-India Operations</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div class="form-title">Tell Us What You're Looking For</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name *</label>
+          <input type="text" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label>Company Name *</label>
+          <input type="text" placeholder="Organisation">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="work@company.com">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Hiring Requirement *</label>
+        <textarea placeholder="Describe what roles you're looking to fill, approximate team size, location preference, and any specific criteria..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Type of Hiring</label>
+        <select>
+          <option value="">Select an option</option>
+          <option>Full-time Recruitment</option>
+          <option>Contract / Temporary Staffing</option>
+          <option>Bulk Hiring</option>
+          <option>Remote Hiring</option>
+          <option>Startup Team Building</option>
+          <option>Not sure — need to discuss</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" style="width:100%; justify-content:center; padding:13px; font-size:14.5px;">
+        Submit Requirement
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <p class="form-note" style="text-align:center; margin-top:12px;">We typically respond within 1 business day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-text" style="font-family:'Sora',sans-serif; font-weight:700; font-size:16px; display:block; margin-bottom:12px; color:white;">UrbanStaff Partners</span>
+        <p>Recruitment & Staffing Solutions across India. Helping businesses hire efficiently and helping candidates find the right fit.</p>
+        <div class="footer-contact">
+          <a href="mailto:hire@urbanstaffpartners.in">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            hire@urbanstaffpartners.in
+          </a>
+          <a href="tel:+919800000000">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+            +91 98XXX XXXXX
+          </a>
+          <a href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn — UrbanStaff Partners
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Recruitment Services</a></li>
+          <li><a href="#services">Bulk Hiring</a></li>
+          <li><a href="#services">Startup Hiring</a></li>
+          <li><a href="#services">Contract Staffing</a></li>
+          <li><a href="#services">Remote Hiring</a></li>
+          <li><a href="#services">BPO Hiring</a></li>
+          <li><a href="#services">Sales & Ops Hiring</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#why">Why UrbanStaff</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#candidates">For Candidates</a></li>
+          <li><a href="#contact">Hire Talent</a></li>
+          <li><a href="mailto:careers@urbanstaffpartners.in">Submit Resume</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 UrbanStaff Partners. All rights reserved.</span>
+      <span>Recruitment & Staffing Solutions · India</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
